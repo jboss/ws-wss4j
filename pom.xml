@@ -80,7 +80,8 @@
     <scm>
         <connection>scm:git:https://github.com/jboss/ws-wss4j.git</connection>
         <developerConnection>scm:git:https://github.com/jboss/ws-wss4j.git</developerConnection>
-      <tag>HEAD</tag>
+        <url>https://github.com/jboss/ws-wss4j</url>
+        <tag>HEAD</tag>
   </scm>
     <organization>
         <name>The Apache Software Foundation</name>
@@ -206,6 +207,17 @@
                     <goals>deploy</goals>
                     <arguments>-Papache-release</arguments>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.6.8</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <nexusUrl>https://repository.jboss.org/nexus/</nexusUrl>
+                    <serverId>jboss-releases-repository</serverId>
+                    <stagingProfileId>2161b7b8da0080</stagingProfileId>
                 </configuration>
             </plugin>
         </plugins>
